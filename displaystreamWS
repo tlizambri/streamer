@@ -1,0 +1,19 @@
+#!/bin/sh
+
+    # Change the next 3 lines to suit where you install your script and what you want to call it
+    DIR=/home/pi/dev/streamer
+    DAEMON=displaystreamWS.sh
+    DAEMON_NAME=displaystreamWS
+
+    case "$1" in
+            start)
+                    /home/pi/dev/streamer/displaystreamWS.sh > /dev/null &
+                    ;;
+
+            *)
+
+            echo "Usage: /etc/init.d/$DEAMON_NAME {start}"
+            exit 1
+            ;;
+    esac
+    

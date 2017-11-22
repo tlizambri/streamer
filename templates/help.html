@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Help Page">
+    <meta name="author" content="Todd Lizambri">
+
+    <title>TrafficLight</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="static/css/bootstrap.min.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+ <div id="header">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+	<div class="navbar-header">
+	  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	    <span class="sr-only">Toggle navigation</span>
+	    <span class="icon-bar"></span>
+	    <span class="icon-bar"></span>
+	    <span class="icon-bar"></span>
+	  </button>
+	  <h:panelGroup>
+	    <a class="navbar-brand" href="/">TrafficLight</a>
+	  </h:panelGroup>
+	</div>
+
+	<div class="collapse navbar-collapse">
+	  <ul class="nav navbar-nav navbar-right">
+	    <li id="homeNavItem"><a href="/">Home</a></li>
+	    <li id="controlNavItem"><a href="/controlpanel">Control</a></li>
+	    <li id="HelpNavItem"><a href="/help">Help</a></li>
+	  </ul>
+	</div>
+      </div>
+     </nav>
+ </div>
+ <div id="body" class="container main">
+            <br/><br/><br/>
+	    <h1>Help</h1>
+            <p>The following description will help determine what you may want to specify for the message and command options when communicating with the trafficlight or the message marquee.</p>
+            <p>The command parameters sent to the traffic light are a series of individual commands that represent either a command to turn a light on or off, or a command to delay for a small period of time between changing lights.
+            <ul>
+              <li>R - turn the RED light ON</li>
+              <li>r - turn the RED light OFF</li>
+              <li>Y - turn the YELLOW light ON</li>
+              <li>y - turn the YELLOW light OFF</li>
+              <li>G - turn the GREEN light ON</li>
+              <li>g - turn the GREEN light OFF</li>
+              <li>- (hyphen) - will add a half second delay to to the sequence</li>
+              <li>. (period) - will add a quarter of a second delay to to the sequence</li>
+              <li>, (comma)  - will add a tenth of a second delay to to the sequence</li>
+            </ul>
+            <p>The text modes also need a little clarification.</p>
+            <ul>
+              <li>rotate - runs acrossed the screen from the right</li>
+              <li>hold - appears in the middle of the screen</li>
+              <li>flash - words flash on the screen</li>
+              <li>scroll - words scroll up from the bottom</li>
+              <li>auto - a crazy combination fo display types (some not listed here)</li>
+              <li>compressed - compressed letters streaming across the display from right to left</li>
+            </ul>
+</div>
+
+        <!-- Bootstrap core JavaScript
+	     ================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+  <script src="static/js/jquery-3.2.1.min.js"></script>
+  <script src="static/js/bootstrap.min.js"></script>
+  </body>
+</html>
+

@@ -1,0 +1,18 @@
+#! /bin/sh
+
+case $1 in
+	start)
+		echo "Starting omxplayer displaystream."
+  		/usr/local/bin/displaystream.sh &	
+		;;
+	stop)
+		echo "Termination omxplayer and displaystream"
+		ps -eaf | grep omxplayer | grep -v "ps" | grep -v "grep" | awk '{print $2}' | xargs kill -9
+		ps -eaf | grep displaystream | grep -v "ps" | grep -v "grep" | awk '{print $2}' | xargs kill -9	
+  		;;
+	*)
+		echo "Usage: $0 {start|stop}"
+		exit 2
+		;;
+esac
+
