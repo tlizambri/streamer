@@ -10,7 +10,7 @@ from flask import render_template
 #################################################
 app       = Flask(__name__)
 
-program      = '/usr/local/bin/displaystream.sh'
+program      = '/home/pi/dev/streamer/displaystream.sh'
 streamServer = 'streamer.ihire.local'
 application  = 'live'
 stream       = 'caster1'
