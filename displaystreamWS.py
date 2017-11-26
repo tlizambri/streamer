@@ -72,6 +72,7 @@ def control():
 	print("Killing process...");
 	process.kill();
 	process.wait();
+	subprocess.Popen(['/usr/bin/pkill','omxplayer']).wait();
 	print("Process terminated. Restarting with new parameters.");
 	process = subprocess.Popen(args);
 

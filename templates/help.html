@@ -6,7 +6,7 @@
     <meta name="description" content="Help Page">
     <meta name="author" content="Todd Lizambri">
 
-    <title>TrafficLight</title>
+    <title>Streamer</title>
 
     <!-- Bootstrap core CSS -->
     <link href="static/css/bootstrap.min.css" rel="stylesheet">
@@ -25,7 +25,7 @@
 	    <span class="icon-bar"></span>
 	  </button>
 	  <h:panelGroup>
-	    <a class="navbar-brand" href="/">TrafficLight</a>
+	    <a class="navbar-brand" href="/">Streamer</a>
 	  </h:panelGroup>
 	</div>
 
@@ -42,29 +42,19 @@
  <div id="body" class="container main">
             <br/><br/><br/>
 	    <h1>Help</h1>
-            <p>The following description will help determine what you may want to specify for the message and command options when communicating with the trafficlight or the message marquee.</p>
-            <p>The command parameters sent to the traffic light are a series of individual commands that represent either a command to turn a light on or off, or a command to delay for a small period of time between changing lights.
-            <ul>
-              <li>R - turn the RED light ON</li>
-              <li>r - turn the RED light OFF</li>
-              <li>Y - turn the YELLOW light ON</li>
-              <li>y - turn the YELLOW light OFF</li>
-              <li>G - turn the GREEN light ON</li>
-              <li>g - turn the GREEN light OFF</li>
-              <li>- (hyphen) - will add a half second delay to to the sequence</li>
-              <li>. (period) - will add a quarter of a second delay to to the sequence</li>
-              <li>, (comma)  - will add a tenth of a second delay to to the sequence</li>
-            </ul>
-            <p>The text modes also need a little clarification.</p>
-            <ul>
-              <li>rotate - runs acrossed the screen from the right</li>
-              <li>hold - appears in the middle of the screen</li>
-              <li>flash - words flash on the screen</li>
-              <li>scroll - words scroll up from the bottom</li>
-              <li>auto - a crazy combination fo display types (some not listed here)</li>
-              <li>compressed - compressed letters streaming across the display from right to left</li>
-            </ul>
-</div>
+	    <p>The Streamer interface is designed to help us easily change the information displayed on the atteched wallscreen. This interface supports API commands directly or you can simply use the selector on the control panel.
+</p>
+	    <p>The control panel has been configured to display a set of pre-defined streams that should be present (coming from dedicated VMs to stream content). If you would like additional values added to the interface, you will need to open a ticket or have someone edit the control.html file on this device.</p>
+	    <p>However, if you are a little more adventurous, simply stream content to the 'streamer' host and use the API to modify the wallscreen to display the streamed content. The following commnad can be used to pull the streamed content and display it on this device.
+</p>
+<p>http://<i><b>ip of this device</b></i>/control?server=<i><b>stream server</b></i>&application=<i><b>application name</b></i>&stream=<i><b>stream</b></i></p>
+<p>If you choose to leave any of the parameters out of the request, the following defualts will be used..or it will simply use the current value (from the previous request).</p>
+<ul>
+<li>server = stream.ihire.local</li>
+<li>application = live</li>
+<li>stream = ...as defined in the displayscreenWS.py file.
+</ul>
+<div>
 
         <!-- Bootstrap core JavaScript
 	     ================================================== -->
