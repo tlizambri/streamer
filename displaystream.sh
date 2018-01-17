@@ -20,7 +20,7 @@ fi
 
 if [[ x$3 == x ]]
 then
-	STREAM=`hostname`
+	STREAM=`hostname|sed 's\wallscreen\caster\'`
 else
 	STREAM=$3
 fi

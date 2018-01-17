@@ -13,7 +13,7 @@ app       = Flask(__name__)
 program      = '/home/pi/dev/streamer/displaystream.sh'
 streamServer = 'streamer.ihire.local'
 application  = 'live'
-stream       = 'caster1'
+stream       = ''
 args         = [program, streamServer, application, stream]
 
 print("Starting process: %s",  args);
