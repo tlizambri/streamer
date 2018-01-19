@@ -4,11 +4,13 @@ import subprocess
 from flask import Flask
 from flask import request
 from flask import render_template
+from flask_cors import CORS
 
 #################################################
 # Define the FLask main loop.
 #################################################
 app       = Flask(__name__)
+CORS(app)
 
 program      = '/home/pi/dev/streamer/displaystream.sh'
 streamServer = 'streamer.ihire.local'
