@@ -1,11 +1,11 @@
 #!/bin/sh
 
     # Change the next 3 lines to suit where you install your script and what you want to call it
-    DAEMON_NAME=displaystreamWS
+    DAEMON_NAME=streamerWS
 
     case "$1" in
             start)
-                    /usr/bin/python3 /home/pi/dev/streamer/displaystreamWS.py > /dev/null &
+                    /usr/bin/python3 ~/dev/streamer/streamerWS.py > /dev/null &
                     ;;
 
             *)

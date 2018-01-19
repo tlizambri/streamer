@@ -44,21 +44,20 @@
 
    <br/><br/><br/>
    <h1>Control Panel</h1>   
-   <form class="form" action="/control" method="get" role="form">
+{% for destination in destinationList %}
      <div class="row">
-       <div class="form-group col-lg-4">
-	  <label for="streamSelector">Select Stream to Display</label>
+       <div id="{{ destination }}_form" class="form-group col-lg-4">
+	  <b><a href="http://{{ destination }}.ihire.local/controlpanel">{{ destination }}</a></b>
 	  <select name="stream" class="form-control" id="streamSelector">
-	    <option>caster1</option>
-	    <option>caster2</option>
-	    <option>caster3</option>
-	    <option>caster4</option>
-            <option>caster5</option>
+{% for stream in streamList %}
+	    <option>{{ stream }}</option>
+{% endfor %}
 	  </select>
        </div>
      </div>
-     <button type="submit" class="btn btn-primary">Set Stream</button>
-   </form>
+     <button id="{{ destination }}_btn" type="submit" class="btn btn-primary">Set Stream</button>
+   <hr/>
+{% endfor %}
 	          
 </div>
 
@@ -67,6 +66,19 @@
 	<!-- Placed at the end of the document so the pages load faster -->
   <script src="static/js/jquery-3.2.1.min.js"></script>
   <script src="static/js/bootstrap.min.js"></script>
+  <script>
+    $(document).ready(function(){
+
+{% for destination in destinationList %}
+    $("#{{ destination }}_btn").click( function() {
+    var streamName     = $('#{{ destination }}_form #streamSelector').find(":selected").val();
+    var destinationURL = "http://{{ destination }}.ihire.local/control?stream=".concat(streamName);
+    $.get(destinationURL);
+    });
+{% endfor %}
+    });
+  </script>
+  
   </body>
 </html>
 
